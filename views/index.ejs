@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Moon+Dance&family=Rajdhani:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <!-- <link href="styles/style.css" rel="stylesheet" /> -->
+  </head>
+  <body class="" style="background-color: rgb(255, 255, 255)">
+    <!-- header section -->
+    <nav
+      class="navbar navbar-expand-lg navbar-light"
+      style="background-color: rgb(255, 255, 255)"
+    >
+      <div class="container-fluid">
+        <a
+          class="navbar-brand"
+          style="
+            color: rgb(188, 149, 8);
+            font-family: 'Moon Dance', cursive;
+            font-size: 300%;
+          "
+          href="/"
+          >Luxuria</a
+        >
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNavDropdown"
+          aria-controls="navbarNavDropdown"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="/">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="/Carlist"> List</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="/Cardetails">More details</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div
+      class="rounded my-4"
+      style="
+        background-color: rgb(255, 255, 255);
+        height: 5rem;
+        text-align: center;
+        padding-top: -1rem;
+        font-size: 3rem;
+        font-weight: 700;
+        font-family: 'Rajdhani', sans-serif;
+        color: rgb(48, 46, 41);
+      "
+      id="players"
+    >
+      Automotive
+    </div>
+    <div class="container-fluid">
+      <div class="row" style="justify-content: center">
+        <% for(car of autos) {%>
+        <div
+          class="card"
+          style="width: 18rem; border: 1px thin rgb(127, 126, 117)"
+        >
+          <img
+            class="card-img-top"
+            src="<%= car.image %>"
+            alt="Card image cap"
+            style="height: 11em; width: 16em"
+          />
+          <div class="card-body ml-1" style="font-size: 1em">
+            <h5
+              class="card-title"
+              style="
+                font-family: 'Rajdhani', sans-serif;
+                font-weight: bolder;
+                font-size: 1.5rem;
+              "
+            >
+              <%= car.Name %>
+            </h5>
+            <p class="card-text" style="color: rgb(100, 96, 92)">
+              <%=car.Description %>
+            </p>
+            <h5 style="color: rgb(188, 149, 8); font-family: serif">
+              <%=car.Price%>
+            </h5>
+          </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item" style="font-size: 0.8em">
+              Engine: <%=car.Engine %>
+            </li>
+            <li class="list-group-item" style="font-size: 0.8em">
+              Fuel Type : <%=car.Fueltype %>
+            </li>
+            <li class="list-group-item" style="font-size: 0.8em">
+              Transmission : <%=car.Transmission %>
+            </li>
+            <li class="list-group-item" style="font-size: 0.8em">
+              Mileage : <%=car.Mileage %>
+            </li>
+          </ul>
+          <div class="card-body">
+            <a
+              href="<%=car.link %>"
+              style="
+                border-bottom: 2px solid rgb(151, 120, 8);
+                padding: 1px;
+                border-radius: 10px;
+              "
+              class="card-link btn"
+              >Know More</a
+            >
+          </div>
+        </div>
+        <% } %>
+      </div>
+    </div>
+  </body>
+</html>
